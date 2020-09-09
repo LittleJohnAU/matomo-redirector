@@ -27,8 +27,8 @@ $matomoTracker->setUrl(THIS_URL);
 if(isset($_SESSION['matvisitor'])){
     $matomoTracker->setVisitorId($_SESSION['matvisitor']);
     $matomoTracker->setUrlReferrer($_SESSION['matreferrer']);
-    unset($_SESSION['pinvisitor']);
-    unset($_SESSION['pinreferrer']);
+    unset($_SESSION['matvisitor']);
+    unset($_SESSION['matreferrer']);
 }
 $matomoTracker->doTrackPageView(PAGE_TITLE);
 // if this is a site search add this. Modify the if statement and $_GET variable to your needs
