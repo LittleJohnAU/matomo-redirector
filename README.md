@@ -1,2 +1,34 @@
 # matomo-redirector
-For use with short codes on a different subdomain to where Matomo is installed
+This is for use with the Matomo PHP tracking client and the [Shortcode Tracker plugin](https://github.com/mgazdzik/plugin-ShortcodeTracker) and your short code redirection is on a different subdomain to where Matomo is installed and redirecting your short urls to the main domain.
+i.e. Matomo is setup on **matomo.mydomain**, short code redirector is setup on **s.mydomain.com** and the target is **mydomain.com**
+
+Edit the settings in director.php. On your target site i.e. **mydomain.com** you need to capture the visitor id and referrer by making sure the session name and cookie domain are the same and include at the top of every target page.
+```
+ini_set('session.cookie_domain', '.mydomain.com');
+session_name("mydomain");
+```
+This is the tracking code I use on the primary domain, to connect the redirect with the page and track it Matomo.
+```
+$matomoSiteId = 1;  // Site ID
+$matomoUrl = "https://matomo.mydomain.com"; // Your matomo URL
+$matomoToken = "";  // Your authentication token
+
+// Load object
+require_once("MatomoTracker.php");
+$matomoTracker = new MatomoTracker((int)$matomoSiteId, $matomoUrl);
+    
+// Set authentication token
+$matomoTracker->setTokenAuth($matomoToken);
+$matomoTracker->setUrl(THIS_URL);
+if(isset($_SESSION['matvisitor'])){
+    $matomoTracker->setVisitorId($_SESSION['matvisitor']);
+    $matomoTracker->setUrlReferrer($_SESSION['matreferrer']);
+    unset($_SESSION['pinvisitor']);
+    unset($_SESSION['pinreferrer']);
+}
+$matomoTracker->doTrackPageView(PAGE_TITLE);
+// if this is a site search add this. Modify the if statement and $_GET variable to your needs
+if($sitesearch !== false){
+   $matomoTracker->doTrackSiteSearch(urldecode($_GET['q']));
+}
+```
