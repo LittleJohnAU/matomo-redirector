@@ -11,7 +11,7 @@ Edit the settings in **director.php** and **index.php**. On your target site i.e
 ini_set('session.cookie_domain', '.mydomain.com');
 session_name("mydomain");
 ```
-This is the tracking code I use on the primary domain, to connect the redirect with the page and track it Matomo.
+This is the tracking code I use on the primary domain, to connect the redirect with the page and track it in Matomo.
 ```
 $matomoSiteId = 1;  // Site ID
 $matomoUrl = "https://matomo.mydomain.com"; // Your matomo URL
