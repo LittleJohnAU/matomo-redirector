@@ -33,6 +33,6 @@ if(isset($_SESSION['matvisitor'])){
 $matomoTracker->doTrackPageView(PAGE_TITLE);
 // if this is a site search add this. Modify the if statement and $_GET variable to your needs
 if($sitesearch !== false){
-   $matomoTracker->doTrackSiteSearch(urldecode($_GET['q']));
+   $matomoTracker->doTrackSiteSearch(urldecode($_GET['query']));
 }
 ```
