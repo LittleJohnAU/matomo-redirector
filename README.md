@@ -36,4 +36,13 @@ if($sitesearch !== false){
    $matomoTracker->doTrackSiteSearch(urldecode($_GET['query']));
 }
 ```
+This is what the .htaccess file looks like:
+```
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^([a-zA-Z0-9]+)/?$ index.php?c=$1 [L] 
+</IfModule>
+```
 See it in action with one of my blog posts (The Beast Of The Flesh): https://p.inall.love/ab1d4f
