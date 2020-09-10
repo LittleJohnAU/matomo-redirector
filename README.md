@@ -29,6 +29,8 @@ If the value is `'shordcode'` change it to `'shortcode'` or the reports will not
 
 This is the tracking code to use on the tracked domain `https://mydomain.com`, to connect the redirect with the page and track them together. Be sure to set the site ID correctly and enter your API authentication token (found in your personal settings).
 ```php
+const THIS_URL = 'https://mydomain.com';
+const PAGE_TITLE = 'My Home Page';
 $matomoSiteId = 1;  // Site ID
 $matomoUrl = "https://matomo.mydomain.com"; // Your matomo URL
 $matomoToken = "";  // Your authentication token
