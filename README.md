@@ -49,8 +49,9 @@ if(isset($_SESSION['matvisitor'])){
     unset($_SESSION['matreferrer']);
 }
 $matomoTracker->doTrackPageView(PAGE_TITLE);
-// if this is a site search add this. Modify the if statement and $_GET variable to your needs
+/* If this is a site search page add this. Modify the if statement and $_GET variable to your needs
 if($sitesearch !== false){
    $matomoTracker->doTrackSiteSearch(urldecode($_GET['query']));
 }
+*/
 ```
