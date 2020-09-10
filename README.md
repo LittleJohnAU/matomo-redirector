@@ -4,8 +4,6 @@ NB: The subdomain should be one letter to be as short as possible i.e. `https://
 
 ![Folder structure](https://res.cloudinary.com/league-of-true-love/image/upload/v1599754872/folders.jpg)
 
-**NB: It will capture external links (i.e. someotherdomain.com) as events in Matomo. I use this just for short urls to my primary domain.**
-
 It also has an HTML template for outputting the errors. If you create your own template, just make sure you add `{{error}}` where you want it to go.
 
 ## INSTALLING:
