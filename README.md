@@ -36,3 +36,4 @@ if($sitesearch !== false){
    $matomoTracker->doTrackSiteSearch(urldecode($_GET['query']));
 }
 ```
+See it in action with one of my blog posts: https://p.inall.love/ab1d4f
