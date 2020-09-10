@@ -4,7 +4,7 @@
  * For installation and information, see: https://github.com/LittleJohnAU/matomo-redirector
  *
  * @license released under GPL-3.0 License http://www.opensource.org/licenses/GPL-3.0
- *
+ * Copyright (C) 2020 The League Of True Love
  * @link https://github.com/matomo-org/matomo-php-tracker
  * @link https://github.com/mgazdzik/plugin-ShortcodeTracker
  *
