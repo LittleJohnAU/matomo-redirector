@@ -1,4 +1,14 @@
 <?php
+/**
+ *
+ * For installation and information, see: https://github.com/LittleJohnAU/matomo-redirector
+ *
+ * @license released under GPL-3.0 License http://www.opensource.org/licenses/GPL-3.0
+ *
+ * @link https://github.com/matomo-org/matomo-php-tracker
+ * @link https://github.com/mgazdzik/plugin-ShortcodeTracker
+ *
+ */
 class Director
 {
     protected static $chars = "abcdfghjkmnpqrstvwxyz|ABCDFGHJKLMNPQRSTVWXYZ|0123456789";
