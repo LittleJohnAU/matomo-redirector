@@ -8,7 +8,7 @@ It also has an HTML template for outputting the errors. If you create your own t
 
 ## INSTALLING:
 
-**Be sure to add the subdomain you use for redirecting to the website measurables in Matomo** `Adminstration -> Websites -> Manage -> edit`
+**Be sure to add the subdomain you use for redirecting to the website measurables in Matomo** `Administration -> Websites -> Manage -> edit`
 
 ![Measurables](https://res.cloudinary.com/league-of-true-love/image/upload/v1599754877/measurable.jpg)
 
