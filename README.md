@@ -19,15 +19,8 @@ On your target site i.e. `https://mydomain.com` you need to capture the visitor 
 ini_set('session.cookie_domain', '.mydomain.com');
 session_name("mydomain");
 ```
-This is what the .htaccess file looks like:
-```
-<IfModule mod_rewrite.c>
-RewriteEngine On
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^([a-zA-Z0-9]+)/?$ index.php?c=$1 [L] 
-</IfModule>
-```
+Rename `htaccess.txt` to `.htaccess`
+
 Check the ShortcodeTracker plugin file -> **ShortcodeTracker/ShortcodeTracker.php** for the following constant:
 ```php
 const REDIRECT_EVENT_CATEGORY
