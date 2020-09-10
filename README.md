@@ -11,6 +11,21 @@ Edit the settings in **director.php** and **index.php**. On your target site i.e
 ini_set('session.cookie_domain', '.mydomain.com');
 session_name("mydomain");
 ```
+This is what the .htaccess file looks like:
+```
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^([a-zA-Z0-9]+)/?$ index.php?c=$1 [L] 
+</IfModule>
+```
+Check the ShortcodeTracker plugin file -> **ShortcodeTracker/ShortcodeTracker.php** for the following constant
+```
+const REDIRECT_EVENT_CATEGORY
+```
+If the value is `'shordcode'` change it to `'shortcode'` or the reports will not work
+
 This is the tracking code I use on the primary domain, to connect the redirect with the page and track it in Matomo.
 ```
 $matomoSiteId = 1;  // Site ID
@@ -36,13 +51,5 @@ if($sitesearch !== false){
    $matomoTracker->doTrackSiteSearch(urldecode($_GET['query']));
 }
 ```
-This is what the .htaccess file looks like:
-```
-<IfModule mod_rewrite.c>
-RewriteEngine On
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^([a-zA-Z0-9]+)/?$ index.php?c=$1 [L] 
-</IfModule>
-```
+
 See it in action with one of my blog posts (The Beast Of The Flesh): https://p.inall.love/ab1d4f
