@@ -1,5 +1,7 @@
 This is for use with the Matomo [PHP tracking client](https://github.com/matomo-org/matomo-php-tracker) and the [Shortcode Tracker plugin](https://github.com/mgazdzik/plugin-ShortcodeTracker) and your short code redirection is on a different subdomain to where Matomo is installed and neither the root domain or redirection subdomain have access to matomo directly.
 
+NB: The subdomain should be one letter to be as short as possible i.e. `https://s.mydomain.com`
+
 ![Folder structure](https://res.cloudinary.com/league-of-true-love/image/upload/v1599754872/folders.jpg)
 
 **NB: It will capture external links (i.e. someotherdomain.com) as events in Matomo. I use this just for short urls to my primary domain.**
