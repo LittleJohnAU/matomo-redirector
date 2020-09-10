@@ -27,7 +27,7 @@ const REDIRECT_EVENT_CATEGORY
 ```
 If the value is `'shordcode'` change it to `'shortcode'` or the reports will not work.
 
-This is the tracking code I use on the tracked domain `https://mydomain.com`, to connect the redirect with the page and track them together.
+This is the tracking code to use on the tracked domain `https://mydomain.com`, to connect the redirect with the page and track them together. Be sure to set the site ID correctly and enter your API authentication token (found in your personal settings).
 ```php
 $matomoSiteId = 1;  // Site ID
 $matomoUrl = "https://matomo.mydomain.com"; // Your matomo URL
