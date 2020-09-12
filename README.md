@@ -25,7 +25,7 @@ Check the ShortcodeTracker plugin file -> **ShortcodeTracker/ShortcodeTracker.ph
 ```php
 const REDIRECT_EVENT_CATEGORY
 ```
-If the value is `'shordcode'` change it to `'shortcode'` or the reports will not work.
+If the value is `'shordcode'` change it to `'shortcode'` or the reports will not work. NOTE: If you have been using the Shortcode Tracker plugin prior to this and the category is mispelled, changing it will cause you to lose that data. If this is an issue, then change the spelling in index.php `$matomoTracker->doTrackEvent('shortcode', 'redirect', $shortCode);` to `$matomoTracker->doTrackEvent('shordcode', 'redirect', $shortCode);`
 
 This is the tracking code to use on the tracked domain `https://mydomain.com`, to connect the redirect with the page and track them together. Be sure to set the site ID correctly and enter your API authentication token (found in your personal settings).
 ```php
