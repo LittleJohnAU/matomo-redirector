@@ -30,15 +30,17 @@ if(isset($_GET["c"])){
     $_SESSION['matvisitor'] = $vid; // this needs to be passed to the target domain
     $dir->closeDB(); // close the database connection
 
-    try{
+    if($dir->error === ''){
+        // if all good, track it and send it on it's way
         $matomoTracker->doTrackEvent('shortcode', 'redirect', $shortCode);
         header("HTTP/1.1 301 Moved Permanently");
         // Redirect to the original URL
         header("Location: ".$url);
         exit;
-    }catch(Exception $e){
+    } else {
         unset($_SESSION['matvisitor']);
         unset($_SESSION['matreferrer']);
+        // set 404 header
         header("HTTP/1.0 404 Not Found");
         // Display error
         echo $dir->showHtml();
