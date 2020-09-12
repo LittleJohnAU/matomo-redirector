@@ -4,7 +4,7 @@ NB: The subdomain should be one letter to be as short as possible i.e. `https://
 
 ![Folder structure](https://res.cloudinary.com/league-of-true-love/image/upload/v1599754872/folders.jpg)
 
-It also has an HTML template for outputting the errors. If you create your own template, just make sure you add `{{error}}` where you want it to go.
+It also has an [HTML template](template.html) for outputting the errors. If you create your own template, just make sure you add `{{error}}` where you want it to go.
 
 ## INSTALLING:
 
@@ -12,7 +12,7 @@ It also has an HTML template for outputting the errors. If you create your own t
 
 ![Measurables](https://res.cloudinary.com/league-of-true-love/image/upload/v1599754877/measurable.jpg)
 
-Edit the settings in **director.php** and **index.php**.
+Edit the settings in [director.php](director.php) and [index.php](index.php).
 
 On your target site i.e. `https://mydomain.com` you need to capture the visitor id and referrer by making sure the session name and cookie domain are the same on both.
 ```php
@@ -25,7 +25,7 @@ Check the ShortcodeTracker plugin file -> **ShortcodeTracker/ShortcodeTracker.ph
 ```php
 const REDIRECT_EVENT_CATEGORY
 ```
-If the value is `'shordcode'` change it to `'shortcode'` or the reports will not work. NOTE: If you have been using the Shortcode Tracker plugin prior to this and the category is mispelled, changing it will cause you to lose that data. If this is an issue, then change the spelling in index.php `$matomoTracker->doTrackEvent('shortcode', 'redirect', $shortCode);` to `$matomoTracker->doTrackEvent('shordcode', 'redirect', $shortCode);`
+If the value is `'shordcode'` change it to `'shortcode'` or the reports will not work. NOTE: If you have been using the Shortcode Tracker plugin prior to this and the category is mispelled, changing it will cause you to lose that data. If this is an issue, then change the spelling in [index.php](index.php) `$matomoTracker->doTrackEvent('shortcode', 'redirect', $shortCode);` to `$matomoTracker->doTrackEvent('shordcode', 'redirect', $shortCode);`
 
 This is the tracking code to use on the tracked domain `https://mydomain.com`, to connect the redirect with the page and track them together. Be sure to set the site ID correctly and enter your API authentication token (found in your personal settings).
 ```php
