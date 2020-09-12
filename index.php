@@ -17,21 +17,19 @@ if(isset($_GET["c"])){
     // Load object
     require_once("MatomoTracker.php");
     $ref = $dir->getReferrer();
-    // Matomo object
-    $matomoTracker = new MatomoTracker((int)$dir->matomoSiteId, $dir->matomoUrl);
-    $token = $dir->getToken();
-    $matomoTracker->setTokenAuth($token);
-    $matomoTracker->setIdSite(1); // set this to the id for your target domain
-    $matomoTracker->setUrl($dir->redirectDomain.$shortCode);
-    $matomoTracker->setUrlReferrer($ref);
-    
-    $vid = $matomoTracker->getVisitorId();
-    $_SESSION['matreferrer'] = $ref; // see the readme about unsetting these at the target
-    $_SESSION['matvisitor'] = $vid; // this needs to be passed to the target domain
     $dir->closeDB(); // close the database connection
 
-    if($dir->error === ''){
+    if($url !== false){
         // if all good, track it and send it on it's way
+        $matomoTracker = new MatomoTracker((int)$dir->matomoSiteId, $dir->matomoUrl);
+        $token = $dir->getToken();
+        $matomoTracker->setTokenAuth($token);
+        $matomoTracker->setIdSite(1); // set this to the id for your target domain
+        $matomoTracker->setUrl($dir->redirectDomain.$shortCode);
+        $matomoTracker->setUrlReferrer($ref);
+        $vid = $matomoTracker->getVisitorId();
+        $_SESSION['matreferrer'] = $ref; // see the readme about unsetting these at the target
+        $_SESSION['matvisitor'] = $vid; // this needs to be passed to the target domain
         $matomoTracker->doTrackEvent('shortcode', 'redirect', $shortCode);
         header("HTTP/1.1 301 Moved Permanently");
         // Redirect to the original URL
