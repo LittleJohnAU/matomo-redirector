@@ -61,18 +61,15 @@ class Director
     public function shortToLong($code){
         if(empty($code)) {
             $this->error = "No short code was supplied";
-            throw new Exception("No short code was supplied");
         }
 
         if($this->validateShortCode($code) == false){
             $this->error = "Short code is not valid";
-            throw new Exception("Short code is not valid");
         }
 
         $urlRow = $this->getUrlFromDB($code);
         if(empty($urlRow)){
             $this->error = "Short code does not appear to exist.";
-            throw new Exception("Short code does not appear to exist.");
         }
 
         return $urlRow["url"];
