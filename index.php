@@ -39,6 +39,7 @@ if(isset($_GET["c"])){
     }catch(Exception $e){
         unset($_SESSION['matvisitor']);
         unset($_SESSION['matreferrer']);
+        header("HTTP/1.0 404 Not Found");
         // Display error
         echo $dir->showHtml();
     }
